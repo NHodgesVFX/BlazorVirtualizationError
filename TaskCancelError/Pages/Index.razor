@@ -1,0 +1,16 @@
+@page "/"
+
+<Virtualize Items="@data">
+    <h1>@context</h1>
+</Virtualize>
+
+@code{
+    public List<String> data = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        for (int i = 0; i < 1000; i++){
+            data.Add(Guid.NewGuid().ToString());
+        }
+    }
+}
